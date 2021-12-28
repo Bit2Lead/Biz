@@ -22,3 +22,7 @@ Route::post('/admin/task_add', [App\Http\Controllers\Admin\Task::class, 'index']
 
 Route::post('/admin/task_add', [App\Http\Controllers\Admin\Task::class, 'index']);
 Route::post('/admin/task_edit/{id}', [App\Http\Controllers\Admin\Task::class, 'task_edit']);
+Route::post('/admin/task_update/{id}', [App\Http\Controllers\Admin\Task::class, 'task_update']);
+
+Route::get('/admin/task_list', [App\Http\Controllers\Admin\Task::class, 'task_list']);
+Route::post('/admin/task_delete/{id}', [App\Http\Controllers\Admin\Task::class, 'task_delete']);

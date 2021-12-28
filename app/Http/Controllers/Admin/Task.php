@@ -54,4 +54,27 @@ class Task extends Controller
             'message' => "Data edit."
         ]);*/
     }
+
+    public function task_update($id)
+    {
+        $data = Request::all();
+        DB::table('tasks')->where('id', $id)->update($data['body']);
+
+        return response()->json([
+            'status' => 200,
+            'message' => "Updated."
+        ]);
+    }
+
+    public function task_list()
+    {
+        $data = DB::table('tasks')->get();
+        return response()->json($data);
+    }
+
+    public function task_delete($id)
+    {
+        DB::table('tasks')->where('id', $id)->delete();
+        return response()->json("deleted!");
+    }
 }
